@@ -8,9 +8,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-EditText etResult;
-Button btnAC, btnClear,btnDiv,btnper,btn7,btn8,btn9
-        ,btn4,btn5,btn6,btn1,btn2,btn3,btn0,btnDot,btnEquals,btnAdd,btnSub,btnMul;
+    EditText etResult;
+    TextView txtmsg;
+    
+    Button btnAC, btnClear,btnDiv,btnper,btn7,btn8,btn9
+            ,btn4,btn5,btn6,btn1,btn2,btn3,btn0,btnDot,btnEquals,btnAdd,btnSub,btnMul;
     float a, b,c ,d;
 
     boolean Add, Sub, Mul, Div ,Per;
@@ -39,9 +41,9 @@ Button btnAC, btnClear,btnDiv,btnper,btn7,btn8,btn9
         btnAdd = (Button) findViewById(R.id.btnAdd);
         btnSub = (Button) findViewById(R.id.btnSub);
         etResult=(EditText)findViewById(R.id.etResult);
+        txtmsg=(TextView) findViewById(R.id.txtmsg);
 
-
-
+        
         btn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,15 +106,9 @@ Button btnAC, btnClear,btnDiv,btnper,btn7,btn8,btn9
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                etResult.append("+");
-
-                if (etResult == null) {
-                    etResult.setText("");
-                } else {
-                    a = Float.parseFloat(etResult.getText() + "");
-                    Add = true;
-                    etResult.setText(null);
-                }
+                a = Float.parseFloat(etResult.getText() + "");
+                Add = true ;
+                etResult.setText(null);
             }
         });
 
@@ -199,3 +195,5 @@ Button btnAC, btnClear,btnDiv,btnper,btn7,btn8,btn9
         });
     }
 }
+
+
